@@ -7,8 +7,6 @@ program_name="\e[1;36mJavaScript Vulnerability and Sensitive Info Scanner\e[0m"
 developer_name="\e[1;32m0x-bala\e[0m"
 developer_instagram="\e[1;34mhttps://www.instagram.com/0x_bala/\e[0m"
 developer_github="\e[1;34mhttps://github.com/0x-bala\e[0m"
-
-# Print program name and developer profile
 print_program_info() {
     echo -e "\n\e[1;35m=====================================================\e[0m"
     echo -e "Program Name: $program_name"
@@ -18,12 +16,10 @@ print_program_info() {
     echo -e "\e[1;35m=====================================================\e[0m"
 }
 
-# Print simplified usage information
 print_usage_info() {
     echo -e "\e[1;33mUsage: Scan for JS vulnerabilities.\e[0m"
 }
 
-# Function to fetch JavaScript files using waybackurls and save to output file
 fetch_js_files() {
     local domain=$1
     local output_file=$2
@@ -31,7 +27,6 @@ fetch_js_files() {
     echo $domain | waybackurls | grep '\.js$' > $output_file
 }
 
-# Function to scan JavaScript files for sensitive information
 scan_for_sensitive_info() {
     local js_url=$1
     echo -e "\e[1;33mScanning $js_url for sensitive information...\e[0m"
@@ -51,7 +46,6 @@ scan_for_vulnerabilities() {
     done
 }
 
-# Main function to orchestrate the scanning
 main() {
     if [ -z "$1" ]; then
         echo -e "\e[1;31mUsage: $0 <domain>\e[0m"
@@ -61,24 +55,18 @@ main() {
     local domain=$1
     local output_file="output.txt"
     
-    # Print program info and usage information
     print_program_info
     print_usage_info
-    
-    # Fetch JavaScript files and save to output file
-    fetch_js_files $domain $output_file
+        fetch_js_files $domain $output_file
 
-    # Clear previous results
     > sensitive_info.txt
     > vulnerabilities.txt
 
-    # Read each JavaScript file URL from the output file and scan
     while read -r js_file; do
         scan_for_sensitive_info $js_file
         scan_for_vulnerabilities $js_file
     done < $output_file
 
-    # Summary of findings
     echo -e "\e[1;35m=====================================================\e[0m"
     echo -e "\e[1;32mScan completed. Results:\e[0m"
     echo -e "\e[1;34mSensitive Information found:\e[0m"
@@ -89,5 +77,4 @@ main() {
     echo -e "\e[1;35m=====================================================\e[0m"
 }
 
-# Run the main function with the provided domain
 main $1
