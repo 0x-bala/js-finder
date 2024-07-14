@@ -13,9 +13,9 @@ This tool scans JavaScript files from a given domain for sensitive information a
 - Bash shell
 
 Developer
-            Name: 0x-bala
+           ** Name: 0x-bala
             Instagram: @0x_bala
-            GitHub: 0x-bala
+            GitHub: 0x-bala**
 
 ## Installation
 
