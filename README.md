@@ -12,10 +12,8 @@ This tool scans JavaScript files from a given domain for sensitive information a
 - `waybackurls`
 - Bash shell
 
-Developer
-            ' Name: 0x-bala '
-            ' Instagram: @0x_bala ' 
-            ' GitHub: 0x-bala '
+Developer  
+              https://www.instagram.com/0x_bala/
 
 ## Installation
 
