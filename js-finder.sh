@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# Program Name
 program_name="\e[1;36mJavaScript Vulnerability and Sensitive Info Scanner\e[0m"
-
-# Developer Profile
 developer_name="\e[1;32m0x-bala\e[0m"
 developer_instagram="\e[1;34mhttps://www.instagram.com/0x_bala/\e[0m"
 developer_github="\e[1;34mhttps://github.com/0x-bala\e[0m"
